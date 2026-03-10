@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class ListaDoblementeLigada<T> implements Lista<T> {
 
-     private class Nodo{
+     private class Nodo {
           public T elemento;
 
           public Nodo siguiente;
@@ -52,7 +52,7 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
           return new IteradorDoubleLinkedList();
      }
 
-     public ListaDoblementeLigada(){
+     public ListaDoblementeLigada() {
           this.cabeza = null;
           this.rabo = null;
           this.longitud = 0;
@@ -60,62 +60,75 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
 
      @Override
      public void agregar(T elemento) throws IllegalArgumentException {
-          /*Aqui va tu código*/
+          if (elemento == null) {
+               throw new IllegalArgumentException("El elemento a agregar no puede ser nulo");
+          }
+
+          Nodo nuevo = new Nodo(elemento);
+
+          if (this.longitud == 0) {
+               this.cabeza = nuevo;
+               this.rabo = nuevo;
+          } else {
+               this.cabeza.anterior = nuevo;
+               nuevo.siguiente = this.cabeza;
+               this.cabeza = nuevo;
+          }
+
+          this.longitud = this.longitud + 1;
      }
 
      @Override
-     public void eliminar(T elemento){
-          /*Aqui va tu código*/
+     public void eliminar(T elemento) {
+          /* Aqui va tu código */
      }
-
 
      @Override
      public boolean buscar(T elemento) {
-          /*Aqui va tu código*/
+          /* Aqui va tu código */
      }
 
      @Override
      public void eliminar(int i) {
-          /*Aqui va tu código*/
+          /* Aqui va tu código */
      }
 
      @Override
      public T acceder(int i) throws IllegalArgumentException {
-          /*Aqui va tu código*/  
+          /* Aqui va tu código */
      }
 
      @Override
-     public int devolverIndiceElemento(T elemento) throws IllegalArgumentException{
-          /*Aqui va tu código*/
+     public int devolverIndiceElemento(T elemento) throws IllegalArgumentException {
+          /* Aqui va tu código */
      }
 
      @Override
-     public int devolverLongitud(){
-          /*Aqui va tu código*/
+     public int devolverLongitud() {
+          /* Aqui va tu código */
      }
 
      public void agregarFinal(T elemento) throws IllegalArgumentException {
-          /*Aqui va tu código*/
+          /* Aqui va tu código */
      }
 
-     public ListaDoblementeLigada<T> reversa(){
-          /*Aqui va tu código*/
+     public ListaDoblementeLigada<T> reversa() {
+          /* Aqui va tu código */
      }
 
-     
      private Nodo accederNodo(int i) {
-          /*Aqui va tu código*/
+          /* Aqui va tu código */
      }
 
-     public String toString(){
+     public String toString() {
           String s = "[";
           int cont = 0;
-          for(T elem : this){
-               if(cont == 0){
+          for (T elem : this) {
+               if (cont == 0) {
                     s = s + elem.toString();
                     cont++;
-               }else{
-                    s = s + "," +elem.toString();
+               } else {
+                    s = s + "," + elem.toString();
                }
           }
           s = s + "]";
