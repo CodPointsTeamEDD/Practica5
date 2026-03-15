@@ -1,5 +1,9 @@
 /**
  * Clase que representa una página web con su nombre y la última fecha de visita.
+ * @author Erick Xavier Martinez Briones
+ * @author Luis Fernando Quintana López
+ * @version 1.0.0
+ * @since 2026
  */
 public class Pagina {
 
@@ -26,7 +30,7 @@ public class Pagina {
      * @return la fecha en formato "dd/mm/aaaa"
      */
     public String getFecha() {
-        /*Aquí va tu código*/v
+        return this.ultimaFecha;
     }
 
     /**
@@ -35,7 +39,7 @@ public class Pagina {
      * @return el nombre o URL de la página
      */
     public String getNombre() {
-        /*Aquí va tu código*/
+        return this.nombre;
     }
 
     /**
@@ -60,6 +64,6 @@ public class Pagina {
      */
     @Override
     public String toString() {
-        /*Aquí va tu código*/
+        return nombre + " : " + ultimaFecha;
     }
 }

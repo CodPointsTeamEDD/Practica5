@@ -1,8 +1,12 @@
-import java.util.Iterator;
 
 /**
  * Clase que representa un historial de páginas web,
  * almacenadas en una lista ligada simple.
+ * 
+ * @author Erick Xavier Martinez Briones
+ * @author Luis Fernando Quintana López
+ * @version 1.0.0
+ * @since 2026
  */
 public class Historial {
 
@@ -21,14 +25,20 @@ public class Historial {
     }
 
     /**
-     * Agrega una página al historial 
-      	Si la página ya existe elimina la existente y agrega la nueva al inicio, 
-      	en otro caso, simplemente la agrega al inicio.
+     * Agrega una página al historial
+     * Si la página ya existe elimina la existente y agrega la nueva al inicio,
+     * en otro caso, simplemente la agrega al inicio.
      *
      * @param p la página a agregar
      */
     public void agregarPagina(Pagina p) {
-        /*Aquí va tu código*/
+
+        if (this.historial.buscar(p)) {
+            this.historial.eliminar(p);
+        }
+
+        this.historial.agregar(p);
+
     }
 
     /**
@@ -40,6 +50,22 @@ public class Historial {
      */
     @Override
     public String toString() {
-        /*Aquí va tu código*/
+        String separacion = "--------------------------------";
+        String nom = "Nombre de la pagina web: ";
+        String ult = "Ultima visita: ";
+        String interfaz = " ";
+
+        for (Pagina pag : historial) {
+
+            interfaz += separacion + "\n" +
+                    nom + pag.getNombre() + "\n" +
+                    ult + pag.getFecha() + "\n" +
+                    separacion
+                    + "\n";
+
+        }
+
+        return interfaz;
+
     }
 }

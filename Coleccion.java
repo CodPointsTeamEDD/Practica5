@@ -3,6 +3,11 @@
  *
  * Interfaz que define los métodos que debe implementar una colección
  * genérica.
+ * 
+ * @author Luis Fernando Quintana López
+ * @author Erick Xavier Martinez Briones
+ * @version 1.0.0
+ * @since 2026
  */
 public interface Coleccion<T> extends Iterable<T>{
 
