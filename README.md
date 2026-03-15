@@ -10,11 +10,11 @@ Luis Fernando Quintana López
  Instrucciones de ejecución
 
     Archivos a compilar con javac:
-        javac MainListaSimple.java
-        javac AdivinadorResultados.java
+        javac MainListaDoble.java
+        javac MainLectorPaginas.java
 
     Archivos a ejecutar:
-        java MainListaSimple
-        java AdivinadorResultados
+        java MainListaDoble
+        java MainLectorPaginas
 
 (Ejectuar en pantalla completa de la terminal)
